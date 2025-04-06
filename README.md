@@ -1,3 +1,3 @@
-# Business Foundry
+# ip.businessfactory.dev
 
-a monolithic web server for Business Factory projects
+A gin-gonic web server that returns the client's IP address ala `curl ifconfig.me`
