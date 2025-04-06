@@ -15,8 +15,8 @@ func getEnv(key, fallback string) string {
 func main() {
 	port := fmt.Sprintf(":%s", getEnv("PORT", "3000"))
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-		fmt.Fprintln(res, "Hello foundry", port)
+		fmt.Fprintln(res, req.RemoteAddr)
 	})
 
-	_ = http.ListenAndServe(port, nil)
+	http.ListenAndServe(port, nil)
 }
